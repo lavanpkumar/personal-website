@@ -2,6 +2,14 @@
 import { useState } from 'react'
 import { FaLinkedin, FaGithub, FaEnvelope, FaArrowRight } from 'react-icons/fa'
 
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  details: string[];
+};
+
+
 const projects = [
   {
     title: "TikTok Edit Automator",
@@ -39,7 +47,7 @@ const projects = [
 ]
 
 export default function Portfolio() {
-  const [activeProject, setActiveProject] = useState(null)
+  const [activeProject, setActiveProject] = useState<Project | null>(null)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 to-blue-600 text-white">
